@@ -108,7 +108,7 @@
       margin-bottom: 22px;
     }
 
-    /* Buttons */
+    /* Buttons & Links */
     .btn-primary {
       width: 100%;
       background: linear-gradient(90deg, #6366f1, #8b5cf6);
@@ -125,6 +125,7 @@
       cursor: pointer;
       margin-bottom: 10px;
       box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+      text-decoration: none;
     }
 
     .btn-secondary {
@@ -142,6 +143,7 @@
       justify-content: center;
       gap: 6px;
       margin-bottom: 14px;
+      text-decoration: none;
     }
 
     .video-link {
@@ -300,10 +302,14 @@
     <h1>আপনি কি একজন<br>eSports প্লেয়ার?</h1>
     <p class="subtitle">গেম খেলে আপনি জিতে নিতে পারেন প্রতিদিন ১০০০-২০০০ টাকা পর্যন্ত রিওয়ার্ড</p>
 
-    <button class="btn-primary">↓ অ্যাপটি ডাউনলোড করুন</button>
-    <button class="btn-secondary">ওয়েব অ্যাপে যান &rarr;</button>
+    <!-- Download Button Linked to MediaFire -->
+    <a href="https://www.mediafire.com/file/t6a8f6m0vhv9zie/BooyahWars.apk/file" target="_blank" class="btn-primary">
+      ↓ অ্যাপটি ডাউনলোড করুন
+    </a>
 
-    <a href="#" class="video-link">&#9658; ভিডিও দেখে নিন</a>
+    <a href="#webapp" class="btn-secondary">ওয়েব অ্যাপে যান &rarr;</a>
+
+    <a href="#video" class="video-link">&#9658; ভিডিও দেখে নিন</a>
 
     <!-- How it works -->
     <h2>কীভাবে কাজ করে</h2>
@@ -352,14 +358,13 @@
     <section class="cta-card">
       <h2>আজই খেলা শুরু করুন</h2>
       <p>ফ্রি অ্যাকাউন্ট, এক মিনিটে সেটআপ</p>
-      <button class="btn-primary">অ্যাকাউন্ট খুলুন &rarr;</button>
-      <a href="#" class="video-link" style="margin-bottom: 0;">&#9658; ভিডিও দেখে নিন</a>
+      <a href="#register" class="btn-primary">অ্যাকাউন্ট খুলুন &rarr;</a>
+      <a href="#video" class="video-link" style="margin-bottom: 0;">&#9658; ভিডিও দেখে নিন</a>
       <div class="login-text">
-        আগে থেকেই অ্যাকাউন্ট আছে? <a href="#">লগইন</a>
+        আগে থেকেই অ্যাকাউন্ট আছে? <a href="#login">লগইন</a>
       </div>
     </section>
   </main>
 
 </body>
-  </html>
-  
+</html>
