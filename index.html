@@ -1,398 +1,365 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booyah Wars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Hind Siliguri', sans-serif;
+    }
 
-<title>Booyah Wars — Free Fire Tournament</title>
+    body {
+      background-color: #0b0c16;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
 
-<meta name="description" content="Booyah Wars — Free Fire tournament app. Join tournaments and compete in exciting matches.">
+    .container {
+      width: 100%;
+      max-width: 450px;
+      padding: 20px 16px;
+      background: radial-gradient(circle at 50% 20%, #161b3d 0%, #0a0c16 80%);
+    }
 
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+    /* Navbar */
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
 
-body{
-  font-family:Arial,"Noto Sans Bengali",sans-serif;
-  background:#08090b;
-  color:#fff;
-}
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: #facc15;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-size: 18px;
+    }
 
-header{
-  height:78px;
-  border-bottom:1px solid #22252a;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 22px;
-  position:sticky;
-  top:0;
-  background:#08090b;
-  z-index:5;
-}
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:24px;
-  font-weight:800;
-}
+    /* Hero Visual */
+    .hero-banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
 
-.logo-box{
-  width:48px;
-  height:48px;
-  border-radius:14px;
-  background:#b7ff24;
-  color:#08090b;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-  font-size:15px;
-}
+    .controller-img {
+      width: 220px;
+      max-width: 80%;
+      filter: drop-shadow(0 0 25px rgba(99, 102, 241, 0.45));
+    }
 
-.download-top{
-  background:#b7ff24;
-  color:#08090b;
-  text-decoration:none;
-  padding:14px 18px;
-  border-radius:4px;
-  font-size:25px;
-  display:inline-block;
-}
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-.menu{
-  border:1px solid #444;
-  width:52px;
-  height:52px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  margin-left:10px;
-}
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
 
-nav{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+    /* Typography */
+    h1 {
+      font-size: 1.7rem;
+      line-height: 1.3;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
 
-.stats{
-  height:70px;
-  border-bottom:1px solid #24262b;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  white-space:nowrap;
-  color:#999;
-  font-size:17px;
-}
+    .subtitle {
+      font-size: 0.95rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 22px;
+    }
 
-.stats div{
-  padding:0 24px;
-  border-right:1px solid #27292e;
-}
+    /* Buttons */
+    .btn-primary {
+      width: 100%;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6);
+      color: #fff;
+      border: none;
+      padding: 13px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+    }
 
-.stats b{
-  color:#fff;
-  font-size:25px;
-}
+    .btn-secondary {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
 
-.live{
-  color:#ddd;
-}
+    .video-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-bottom: 35px;
+    }
 
-.dot{
-  color:#ff3d45;
-  margin-right:6px;
-}
+    /* Section Headings */
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
 
-main{
-  max-width:1000px;
-  margin:auto;
-  padding:70px 30px;
-}
+    /* Step List */
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
 
-.hero h1{
-  font-size:56px;
-  line-height:1.05;
-  max-width:720px;
-  font-weight:900;
-}
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
 
-.hero h1 span{
-  color:#b7ff24;
-}
+    .step-num {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: linear-gradient(135deg, #6366f1, #a855f7);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+    }
 
-.hero p{
-  font-size:22px;
-  line-height:1.65;
-  color:#9b9da3;
-  max-width:720px;
-  margin:28px 0 35px;
-}
+    .step-content h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
 
-.btn{
-  display:block;
-  text-align:center;
-  text-decoration:none;
-  padding:22px;
-  background:#b7ff24;
-  color:#08090b;
-  font-size:24px;
-  font-weight:800;
-  border-radius:3px;
-  margin-bottom:14px;
-}
+    .step-content p {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      line-height: 1.3;
+    }
 
-.btn.secondary{
-  background:transparent;
-  color:#fff;
-  border:1px solid #444;
-}
+    /* Feature Cards */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 36px;
+    }
 
-.card{
-  margin-top:60px;
-  border:1px solid #25282d;
-  padding:42px;
-  background:#101216;
-  position:relative;
-}
+    .feature-card {
+      background: #111424;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      padding: 16px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+    }
 
-.card:before{
-  content:"";
-  position:absolute;
-  left:-1px;
-  top:-1px;
-  width:20px;
-  height:20px;
-  border-left:3px solid #b7ff24;
-  border-top:3px solid #b7ff24;
-}
+    .feature-icon {
+      font-size: 1.4rem;
+      color: #94a3b8;
+    }
 
-.badge{
-  display:inline-block;
-  border:1px solid #63383b;
-  padding:10px 16px;
-  color:#ddd;
-  margin-bottom:30px;
-}
+    .feature-text {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      font-weight: 500;
+    }
 
-.card h2{
-  font-size:40px;
-  margin-bottom:10px;
-}
+    /* Bottom CTA Card */
+    .cta-card {
+      background: linear-gradient(180deg, #181938 0%, #101222 100%);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+    }
 
-.card p{
-  color:#999;
-  font-size:18px;
-  line-height:1.7;
-}
+    .cta-card h2 {
+      margin-bottom: 4px;
+    }
 
-.features{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-  margin-top:25px;
-}
+    .cta-card p {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 18px;
+    }
 
-.feature{
-  border:1px solid #292c31;
-  padding:25px;
-  background:#0c0e11;
-}
+    .login-text {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      margin-top: 14px;
+    }
 
-.feature h3{
-  color:#b7ff24;
-  margin-bottom:10px;
-}
-
-.feature p{
-  color:#999;
-  line-height:1.5;
-}
-
-footer{
-  text-align:center;
-  border-top:1px solid #22252a;
-  padding:30px;
-  color:#777;
-}
-
-@media(max-width:650px){
-
-  header{
-    padding:0 14px;
-  }
-
-  .logo{
-    font-size:20px;
-  }
-
-  .logo-box{
-    width:42px;
-    height:42px;
-  }
-
-  .download-top{
-    padding:11px 14px;
-  }
-
-  .menu{
-    width:45px;
-    height:45px;
-  }
-
-  .stats{
-    justify-content:flex-start;
-    font-size:15px;
-  }
-
-  .stats div{
-    padding:0 18px;
-  }
-
-  main{
-    padding:58px 30px;
-  }
-
-  .hero h1{
-    font-size:44px;
-  }
-
-  .hero p{
-    font-size:19px;
-  }
-
-  .features{
-    grid-template-columns:1fr;
-  }
-
-  .card h2{
-    font-size:34px;
-  }
-}
-</style>
+    .login-text a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
+  <main class="container">
+    <!-- Navbar -->
+    <header class="nav">
+      <div class="logo-icon">🎮</div>
+      <div class="brand-name">Booyah Wars</div>
+    </header>
 
-  <div class="logo">
-    <div class="logo-box">BW</div>
-    <span>Booyah Wars</span>
-  </div>
+    <!-- Game Controller Art -->
+    <div class="hero-banner">
+      <svg class="controller-img" viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="25" y="20" width="150" height="90" rx="45" fill="#1e2238" stroke="#333856" stroke-width="2"/>
+        <path d="M40 90 L20 120 A 15 15 0 0 0 45 130 L65 95 Z" fill="#1e2238"/>
+        <path d="M160 90 L180 120 A 15 15 0 0 1 155 130 L135 95 Z" fill="#1e2238"/>
+        <!-- D-Pad -->
+        <path d="M55 55 h10 v-10 h10 v10 h10 v10 h-10 v10 h-10 v-10 h-10 z" fill="#2d3354"/>
+        <!-- Buttons -->
+        <circle cx="145" cy="48" r="5" fill="#38bdf8"/>
+        <circle cx="135" cy="58" r="5" fill="#f43f5e"/>
+        <circle cx="155" cy="58" r="5" fill="#ec4899"/>
+        <circle cx="145" cy="68" r="5" fill="#22c55e"/>
+        <!-- Thumbsticks -->
+        <circle cx="85" cy="75" r="9" fill="#131627" stroke="#333856" stroke-width="2"/>
+        <circle cx="115" cy="75" r="9" fill="#131627" stroke="#333856" stroke-width="2"/>
+      </svg>
+    </div>
 
-  <nav>
-
-    <a
-      class="download-top"
-      href="https://github.com/booyahwarstour/Booyah-Wars/raw/refs/heads/main/Booyah%20war_2.0%20(1).apk"
-    >↓</a>
-
-    <div class="menu">☰</div>
-
-  </nav>
-
-</header>
-
-
-<div class="stats">
-
-  <div class="live">
-    <span class="dot">●</span> লাইভ
-  </div>
-
-  <div>
-    দৈনিক টুর্নামেন্ট <b>100+</b>
-  </div>
-
-  <div>
-    সক্রিয় খেলোয়াড় <b>50K+</b>
-  </div>
-
-</div>
-
-
-<main>
-
-  <section class="hero">
-
-    <h1>
-      বাংলাদেশের সেরা
-      <span>ফ্রি ফায়ার টুর্নামেন্ট</span>
-      অ্যাপ
-    </h1>
-
-    <p>
-      প্রতিদিন নতুন টুর্নামেন্ট, বিশেষ পুরস্কার এবং অসাধারণ গেমিং অভিজ্ঞতা।
-      Booyah Wars কমিউনিটিতে যোগ দিন এবং প্রতিযোগিতায় অংশ নিন।
-    </p>
-
-    <a
-      class="btn"
-      href="https://github.com/booyahwarstour/Booyah-Wars/raw/refs/heads/main/Booyah%20war_2.0%20(1).apk"
-    >
-      ↓ এখনই অ্যাপ ডাউনলোড করুন
-    </a>
-
-    <a
-      class="btn secondary"
-      href="#tournaments"
-    >
-      টুর্নামেন্ট দেখুন →
-    </a>
-
-  </section>
-
-
-  <section class="card" id="tournaments">
-
+    <!-- Hero Content -->
     <div class="badge">
-      <span class="dot">●</span> লাইভ
+      <span class="dot"></span>
+      eSports টুর্নামেন্ট · বাংলাদেশ
     </div>
 
-    <h2>দৈনিক টুর্নামেন্ট</h2>
+    <h1>আপনি কি একজন<br>eSports প্লেয়ার?</h1>
+    <p class="subtitle">গেম খেলে আপনি জিতে নিতে পারেন প্রতিদিন ১০০০-২০০০ টাকা পর্যন্ত রিওয়ার্ড</p>
 
-    <p>
-      Booyah Wars-এ বিভিন্ন Free Fire ম্যাচে অংশ নিন।
-      BR Match, Clash Squad, Lone Wolf এবং আরও অনেক ক্যাটাগরি রয়েছে।
-    </p>
+    <button class="btn-primary">↓ অ্যাপটি ডাউনলোড করুন</button>
+    <button class="btn-secondary">ওয়েব অ্যাপে যান &rarr;</button>
 
-    <div class="features">
+    <a href="#" class="video-link">&#9658; ভিডিও দেখে নিন</a>
 
-      <div class="feature">
-        <h3>BR Match</h3>
-        <p>Battle Royale ম্যাচে অংশ নিন।</p>
+    <!-- How it works -->
+    <h2>কীভাবে কাজ করে</h2>
+    <section class="step-list">
+      <div class="step-item">
+        <div class="step-num">১</div>
+        <div class="step-content">
+          <h3>অ্যাকাউন্ট খুলুন</h3>
+          <p>নাম, ইমেইল ও মোবাইল নম্বর দিয়ে এক মিনিটে</p>
+        </div>
       </div>
-
-      <div class="feature">
-        <h3>Clash Squad</h3>
-        <p>CS ম্যাচে প্রতিযোগিতা করুন।</p>
+      <div class="step-item">
+        <div class="step-num">২</div>
+        <div class="step-content">
+          <h3>ম্যাচে যোগ দিন</h3>
+          <p>ওয়ালেটে টাকা যোগ করে পছন্দের ম্যাচে এন্ট্রি নিন</p>
+        </div>
       </div>
-
-      <div class="feature">
-        <h3>Lone Wolf</h3>
-        <p>1vs1 চ্যালেঞ্জে খেলুন।</p>
+      <div class="step-item">
+        <div class="step-num">৩</div>
+        <div class="step-content">
+          <h3>জিতুন, টাকা তুলুন</h3>
+          <p>bKash বা Nagad-এ সরাসরি উইথড্র করুন</p>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <!-- Why Us Section -->
+    <h2>কেন Booyah Wars?</h2>
+    <section class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <div class="feature-text">প্রতিদিন নতুন ম্যাচ</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💸</div>
+        <div class="feature-text">bKash ও Nagad পেমেন্ট</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💻</div>
+        <div class="feature-text">অ্যাপ ও ওয়েবে খেলুন</div>
+      </div>
+    </section>
 
-  </section>
-
-</main>
-
-
-<footer>
-  © 2026 Booyah Wars — All Rights Reserved.
-</footer>
+    <!-- Bottom CTA -->
+    <section class="cta-card">
+      <h2>আজই খেলা শুরু করুন</h2>
+      <p>ফ্রি অ্যাকাউন্ট, এক মিনিটে সেটআপ</p>
+      <button class="btn-primary">অ্যাকাউন্ট খুলুন &rarr;</button>
+      <a href="#" class="video-link" style="margin-bottom: 0;">&#9658; ভিডিও দেখে নিন</a>
+      <div class="login-text">
+        আগে থেকেই অ্যাকাউন্ট আছে? <a href="#">লগইন</a>
+      </div>
+    </section>
+  </main>
 
 </body>
-</html>
+  </html>
+  
