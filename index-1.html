@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booyah Wars — Free Fire Tournament</title>
+<meta name="description" content="Booyah Wars — Free Fire tournament app. Join tournaments, compete and win exciting prizes.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,"Noto Sans Bengali",sans-serif;background:#08090b;color:#fff}
+header{height:78px;border-bottom:1px solid #22252a;display:flex;align-items:center;justify-content:space-between;padding:0 22px;position:sticky;top:0;background:#08090b;z-index:5}
+.logo{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:800}
+.logo-box{width:48px;height:48px;border-radius:14px;background:#b7ff24;color:#08090b;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:15px}
+.download-top{background:#b7ff24;color:#08090b;text-decoration:none;padding:14px 18px;border-radius:4px;font-size:25px}
+.menu{border:1px solid #444;width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-left:10px}
+nav{display:flex;align-items:center;gap:10px}
+.stats{height:70px;border-bottom:1px solid #24262b;display:flex;align-items:center;justify-content:center;gap:0;overflow:hidden;white-space:nowrap;color:#999;font-size:17px}
+.stats div{padding:0 24px;border-right:1px solid #27292e}
+.stats b{color:#fff;font-size:25px}
+.live{color:#ddd}.dot{color:#ff3d45;margin-right:6px}
+main{max-width:1000px;margin:auto;padding:70px 30px}
+.hero h1{font-size:56px;line-height:1.05;max-width:720px;font-weight:900}
+.hero h1 span{color:#b7ff24}
+.hero p{font-size:22px;line-height:1.65;color:#9b9da3;max-width:720px;margin:28px 0 35px}
+.btn{display:block;text-align:center;text-decoration:none;padding:22px;background:#b7ff24;color:#08090b;font-size:24px;font-weight:800;border-radius:3px;margin-bottom:14px}
+.btn.secondary{background:transparent;color:#fff;border:1px solid #444}
+.card{margin-top:60px;border:1px solid #25282d;padding:42px;background:#101216;position:relative}
+.card:before{content:"";position:absolute;left:-1px;top:-1px;width:20px;height:20px;border-left:3px solid #b7ff24;border-top:3px solid #b7ff24}
+.badge{display:inline-block;border:1px solid #63383b;padding:10px 16px;color:#ddd;margin-bottom:30px}
+.card h2{font-size:40px;margin-bottom:10px}
+.card p{color:#999;font-size:18px;line-height:1.7}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:25px}
+.feature{border:1px solid #292c31;padding:25px;background:#0c0e11}
+.feature h3{color:#b7ff24;margin-bottom:10px}.feature p{color:#999;line-height:1.5}
+footer{text-align:center;border-top:1px solid #22252a;padding:30px;color:#777}
+@media(max-width:650px){
+ header{padding:0 14px}.logo{font-size:20px}.logo-box{width:42px;height:42px}
+ .download-top{padding:11px 14px}.menu{width:45px;height:45px}
+ .stats{justify-content:flex-start;font-size:15px}.stats div{padding:0 18px}
+ main{padding:58px 30px}.hero h1{font-size:44px}.hero p{font-size:19px}
+ .features{grid-template-columns:1fr}.card h2{font-size:34px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-box">BW</div>
+    <span>Booyah Wars</span>
+  </div>
+  <nav>
+    <a class="download-top" href="https://github.com/booyahwarstour/Booyah-Wars/raw/refs/heads/main/Booyah_war_2.0%20(1).apk">↓</a>
+    <div class="menu">☰</div>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="live"><span class="dot">●</span> লাইভ</div>
+  <div>দৈনিক টুর্নামেন্ট <b>100+</b></div>
+  <div>সক্রিয় খেলোয়াড় <b>50K+</b></div>
+</div>
+
+<main>
+  <section class="hero">
+    <h1>বাংলাদেশের সেরা <span>ফ্রি ফায়ার টুর্নামেন্ট</span> অ্যাপ</h1>
+    <p>প্রতিদিন নতুন টুর্নামেন্ট, বিশেষ পুরস্কার এবং অসাধারণ গেমিং অভিজ্ঞতা। Booyah Wars কমিউনিটিতে যোগ দিন এবং প্রতিযোগিতায় অংশ নিন।</p>
+    <a class="btn" href="https://github.com/booyahwarstour/Booyah-Wars/raw/refs/heads/main/Booyah_war_2.0%20(1).apk">↓ এখনই অ্যাপ ডাউনলোড করুন</a>
+    <a class="btn secondary" href="#tournaments">টুর্নামেন্ট দেখুন →</a>
+  </section>
+
+  <section class="card" id="tournaments">
+    <div class="badge"><span class="dot">●</span> লাইভ</div>
+    <h2>দৈনিক ক্যাশ টুর্নামেন্ট</h2>
+    <p>Booyah Wars-এ প্রতিদিন বিভিন্ন Free Fire ম্যাচে অংশ নিন। Br Match, Clash Squad, Lone Wolf এবং আরও অনেক ক্যাটাগরি রয়েছে।</p>
+    <div class="features">
+      <div class="feature"><h3>BR Match</h3><p>Battle Royale ম্যাচে অংশ নিন।</p></div>
+      <div class="feature"><h3>Clash Squad</h3><p>CS ম্যাচে প্রতিযোগিতা করুন।</p></div>
+      <div class="feature"><h3>Lone Wolf</h3><p>1vs1 চ্যালেঞ্জে খেলুন।</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Booyah Wars — All Rights Reserved.</footer>
+</body>
+</html>
